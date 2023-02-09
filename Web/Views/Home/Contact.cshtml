@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/HomeLayout.cshtml";
+}
+
+<main class="main-content">
+    <div class="page">
+        <div class="container">
+            <p>@Model.General.ContactParagraf</p>
+            <div class="row">
+                <div class="col-md-5">
+                    <form action="/home/Send" class="contact-form">
+                        <input type="text" name="name" id="name" placeholder="Adınız..." required>
+                        <input type="text" id="email" name="email" placeholder="Email...">
+                        <input type="text" id="website" name="phone" placeholder="Telefon..." required>
+                        <textarea name="content" id="message" placeholder="Mesajınız..." required></textarea>
+                        <div class="text-right">
+                            <button class="button large" type="submit">Gönder</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 col-md-offset-1">
+                    <div class="map-container">
+                        <div class="map" id="contact_control">
+                            <iframe src="@Model.General.Map" style="border:0;width:100%;height:20rem;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="address-info">
+                            <address>
+                                <img src="~/tema/images/icon-map-small.png" class="icon">
+                                <p><strong>@Model.General.Name</strong> @Model.General.Adress</p>
+                            </address>
+                            <div class="contact-info">
+                                <a href="mailto:@Model.General.Mail" class="mail"><img src="~/tema/images/icon-envelope-small.png" class="icon">@Model.General.Mail</a>
+                                <a href="tel:@Model.General.Phone" class="phone"><img src="~/tema/images/icon-phone-small.png" class="icon">@Model.General.Phone</a>
+                            </div>
+                            <div class="social-links">
+                                <p style="text-align:center;">
+                                    <a href="@Model.General.Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="@Model.General.Youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                                    <a href="mailto:@Model.General.Mail" target="_blank"><i class="fab fa-google"></i></a>
+                                    <a href="https://api.whatsapp.com/send?phone=@Model.General.Whatsapp&text=Merhaba%20hizmetleriniz%20hakkında%20bilgi%20almak%20istiyorum." target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </p>     
+                            </div>
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+<script>
+    window.onload = function () {
+        document.getElementById("contact").className = "menu-item current-menu-item";
+    }
+</script>
+

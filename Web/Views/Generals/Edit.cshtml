@@ -1,0 +1,115 @@
+﻿@model Entity.General
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Genel Bilgiler</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Saloon_img" />
+            <input type="hidden" asp-for="avatar" />
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Slogan" class="control-label"></label>
+                <input asp-for="Slogan" class="form-control" />
+                <span asp-validation-for="Slogan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control" id="editor"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Saloon_img" class="control-label"></label>
+                <br />
+                <input name="image" type="file" />
+                <br />
+                <img src="~/tema/images/@Model.Saloon_img" alt="" class="mt-2" style="width:25%;height:auto;">
+
+                <span asp-validation-for="Saloon_img" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="avatar" class="control-label"></label>
+                <br />
+                <input name="image_avatar" type="file" />
+                <br />
+                <img src="~/tema/images/@Model.avatar" alt="" class="mt-2" style="width:25%;height:auto;">
+
+                <span asp-validation-for="avatar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="avatar_context" class="control-label"></label>
+                <textarea asp-for="avatar_context" class="form-control"></textarea>
+                <span asp-validation-for="avatar_context" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceParagraf" class="control-label"></label>
+                <textarea asp-for="ServiceParagraf" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="ServiceParagraf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactParagraf" class="control-label"></label>
+                <textarea asp-for="ContactParagraf" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="ContactParagraf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adress" class="control-label"></label>
+                <input asp-for="Adress" class="form-control" />
+                <span asp-validation-for="Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mail" class="control-label"></label>
+                <input asp-for="Mail" class="form-control" />
+                <span asp-validation-for="Mail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Map" class="control-label"></label>
+                <input asp-for="Map" class="form-control" />
+                <span asp-validation-for="Map" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Instagram" class="control-label"></label>
+                <input asp-for="Instagram" class="form-control" />
+                <span asp-validation-for="Instagram" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Youtube" class="control-label"></label>
+                <input asp-for="Youtube" class="form-control" />
+                <span asp-validation-for="Youtube" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Whatsapp" class="control-label"></label>
+                <input asp-for="Whatsapp" class="form-control" />
+                <span asp-validation-for="Whatsapp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary btn-block" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('editor');
+    CKEDITOR.replace('editor2');
+    CKEDITOR.replace('editor3');
+
+</script>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <link rel="SHORTCUT ICON" href="https://localhost:44380//tema/images/logom.ico" />
+    <meta name="robots">
+    <meta name="description" content="2016 yılından beri profesyonel çalışan kadrosu ile hizmetinizdeyiz. MEKHANN Hair Studio olarak hayaliniz olan çekici ve sağlıklı saçlara ulaşmanız için sizleri salonumuza bekliyoruz.">
+    <meta name="keywords" content="kuaför, bayan kuaförü, hair studio, istanbul, bahçelievler, saç renklendirme, ombre, sombre, kesim, röfle, boya, saç tasarım">
+    <title>Mekhann Yönetici Paneli</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Generals" asp-action="Edit">Genel Bilgiler</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Services" asp-action="Index">Servisler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Campaigns" asp-action="Index">Kampanyalar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="PriceLists" asp-action="Index">Fiyatlar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Images" asp-action="Index">Galeri</a>
+                        </li>
+                      
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="EntrySliders" asp-action="Index">Ana Sayfa Görselleri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Messages" asp-action="Index">Mesajlar</a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link text-dark" asp-controller="Account" asp-action="LogOut">Çıkış Yap <img src="~/tema/images/logout.png" style="width:1rem;" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <p style="text-align:center;word-wrap:break-word;">Copyright 2021 . Created by <a href="https://mehmetztrk.tk/" target="_blank">Mehmet ÖZTÜRK</a></p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

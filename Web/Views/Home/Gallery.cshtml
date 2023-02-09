@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Gallery";
+    Layout = "~/Views/Shared/HomeLayout.cshtml";
+}
+
+<main class="main-content">
+    <div class="page">
+        <div class="container">
+            <div class="filterable-items">
+                @foreach (var item in Model.Resimler)
+                {
+
+                    <div class="gallery-item filterable-item">
+                        <a href="~/tema/dummy/large-gallery/@item.img" style="width:1080px;height:1080px;">
+                            <figure class="featured-image">
+                                <img src="~/tema/dummy/@item.img" alt="">
+                                <figcaption>
+
+                                    <p>@item.Description</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+
+
+                }
+            </div>
+
+        </div>
+
+    </div>
+</main>
+<script>
+    window.onload = function () {
+        document.getElementById("gallery").className = "menu-item current-menu-item";
+    }
+</script>

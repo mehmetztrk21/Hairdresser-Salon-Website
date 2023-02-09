@@ -1,0 +1,128 @@
+﻿@model GeneralModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/HomeLayout.cshtml";
+}
+
+<div class="hero hero-slider" id="slider">
+    <ul class="slides">
+
+        @foreach (var item in Model.EntrySliders)
+        {
+
+            <li data-bg-image="/tema/images/@item.Image">
+                <div class="container">
+                    <h3 class="slider-subtitle">@item.Title</h3>
+                    <h2 class="slider-title">@item.Subtitle</h2>
+                    <p>@item.Description</p>
+                    @if (TempData["success"] != null)
+                    {
+                        <div class="alert alert-success mt-5" id="message" style="text-align: center; color:#e1a189; font-size: 1.5rem;">@TempData["success"]</div>
+                    }
+                </div>
+            </li>
+        }
+
+
+    </ul>
+</div>
+
+<main class="main-content">
+    <div class="fullwidth-block latest-news-section">
+        <div class="container">
+            <h2 class="section-title">Kampanya</h2>
+            <div class="row">
+                @foreach (var item in Model.Kampanyalar)
+                {
+                    @if (item.Date >= DateTime.Now)
+                    {
+                        <div class="col-md-4">
+
+                            <div class="news">
+                                <div class="entry-date">
+                                    <div class="date">@item.Date.ToString().Replace("/",".").Split()[0].Split(".")[1]</div>
+                                    <div class="monthyear">@item.Date.ToString().Replace("/",".").Split()[0].Split(".")[0].@item.Date.ToString().Replace("/",".").Split()[0].Split(".")[2]</div>
+                                </div>
+                                <div class="entry-detail">
+                                    <div class="entry-summary">@item.Description <a href="/home/contact" class="more-icon"><img src="~/tema/images/arrow.png"></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                }
+            </div>
+        </div>
+
+    </div>
+
+    <div class="fullwidth-block features-section">
+        <div class="container">
+            <h4 class="section-title">Hizmetler</h4>
+            <div class="row">
+                @foreach (var item in Model.Servisler)
+                {
+                    @if (item.HomePage)
+                    {
+                        <div class="col-md-3">
+                            <div class="feature">
+                                <img src="~/tema/images/@item.Icon" class="feature-image">
+                                <h3 class="feature-title">@item.Title</h3>
+                                <p>@item.Description </p>
+                            </div>
+                        </div>
+                    }
+
+                }
+
+            </div> <!-- .row -->
+        </div> <!-- .container -->
+    </div> <!-- .fullwidth-block.features-section -->
+
+    <div class="fullwidth-block team-section">
+        <div class="container">
+            <!--<h4 class="section-title">Volkan Temeller</h4>-->
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <div class="team">
+                        <figure class="team-image"><img src="~/tema/images/@Model.General.avatar"></figure>
+                        <h3 class="team-name">Volkan Temeller</h3>
+                        <p>@Model.General.avatar_context</p>
+                        <div class="social-links">
+                            <a href="@Model.General.Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="mailto:@Model.General.Mail" target="_blank"><i class="fab fa-google"></i></a>
+                            <a href="https://api.whatsapp.com/send?phone=@Model.General.Whatsapp&text=Merhaba%20hizmetleriniz%20hakkında%20bilgi%20almak%20istiyorum." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+
+                </div>
+            </div> <!-- .row -->
+        </div> <!-- .container -->
+    </div> <!-- .fullwidth-block.team-section -->
+
+    <div class="fullwidth-block information-section">
+        <div class="container">
+            <h4 class="section-title">Hakkımızda</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <figure><img src="~/tema/images/@Model.General.Saloon_img"></figure>
+                </div>
+                <div class="col-md-8">
+                    @Html.Raw(Model.General.Description)
+                </div>
+            </div>
+        </div>
+    </div> <!-- .fullwidth-block.information-section -->
+</main>
+<script>
+    window.onload = function () {
+        document.getElementById("home").className = "menu-item current-menu-item";
+    }
+</script>

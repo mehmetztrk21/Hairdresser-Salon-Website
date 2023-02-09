@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Entity.EntrySlider>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Ana Sayfa Görselleri</h4>
+
+<p>
+    <a asp-action="Create">Yeni</a>
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Subtitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subtitle)
+            </td>
+            <td>
+                <img src="~/tema/images/@item.Image" alt="" style="width:50%;">
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm btn-block">Düzenle</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm btn-block">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

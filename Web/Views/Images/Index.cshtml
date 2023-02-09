@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Entity.Image>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Galeri</h4>
+
+<p>
+    <a asp-action="Create">Yeni</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:75%;">
+                @Html.DisplayNameFor(model => model.img)
+            </th>
+           
+            <th style="width:25%;"></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="~/tema/dummy/@item.img" alt="" style="width:25%;">
+            </td>
+           
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm btn-block">Düzenle</a> 
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm btn-block">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

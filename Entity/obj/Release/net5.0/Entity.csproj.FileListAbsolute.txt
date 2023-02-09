@@ -1,0 +1,12 @@
+C:\Users\mehme\Desktop\Dosyalar\Projeler\MekhanKuaför\Entity\bin\Release\net5.0\Entity.deps.json
+C:\Users\mehme\Desktop\Dosyalar\Projeler\MekhanKuaför\Entity\bin\Release\net5.0\Entity.dll
+C:\Users\mehme\Desktop\Dosyalar\Projeler\MekhanKuaför\Entity\bin\Release\net5.0\ref\Entity.dll
+C:\Users\mehme\Desktop\Dosyalar\Projeler\MekhanKuaför\Entity\bin\Release\net5.0\Entity.pdb
+C:\Users\mehme\Desktop\Dosyalar\Projeler\MekhanKuaför\Entity\obj\Release\net5.0\Entity.csproj.AssemblyReference.cache
+C:\Users\mehme\Desktop\Dosyalar\Projeler\MekhanKuaför\Entity\obj\Release\net5.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mehme\Desktop\Dosyalar\Projeler\MekhanKuaför\Entity\obj\Release\net5.0\Entity.AssemblyInfoInputs.cache
+C:\Users\mehme\Desktop\Dosyalar\Projeler\MekhanKuaför\Entity\obj\Release\net5.0\Entity.AssemblyInfo.cs
+C:\Users\mehme\Desktop\Dosyalar\Projeler\MekhanKuaför\Entity\obj\Release\net5.0\Entity.csproj.CoreCompileInputs.cache
+C:\Users\mehme\Desktop\Dosyalar\Projeler\MekhanKuaför\Entity\obj\Release\net5.0\Entity.dll
+C:\Users\mehme\Desktop\Dosyalar\Projeler\MekhanKuaför\Entity\obj\Release\net5.0\ref\Entity.dll
+C:\Users\mehme\Desktop\Dosyalar\Projeler\MekhanKuaför\Entity\obj\Release\net5.0\Entity.pdb

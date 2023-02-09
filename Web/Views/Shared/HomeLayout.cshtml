@@ -1,0 +1,144 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <link rel="SHORTCUT ICON" href="https://localhost:44380//tema/images/logom.ico" />
+    <meta name="robots">
+    <meta name="description" content="2016 yılından beri profesyonel çalışan kadrosu ile hizmetinizdeyiz. MEKHANN Hair Studio olarak hayaliniz olan çekici ve sağlıklı saçlara ulaşmanız için sizleri salonumuza bekliyoruz.">
+    <meta name="keywords" content="kuaför, bayan kuaförü, hair studio, istanbul, bahçelievler, saç renklendirme, ombre, sombre, kesim, röfle, boya, saç tasarım">
+    <!-- Loading third party ~/tema/fonts/ -->
+    <link href="~/tema/fonts//font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="~/tema/fonts//novecento-font/novecento-font.css" rel="stylesheet" type="text/css">
+    <!-- Loading main css file -->
+    <link rel="stylesheet" href="~/tema/style.css">
+    <title>@Model.General.Name</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+
+    <!--[if lt IE 9]>
+    <script src="~/tema/js/ie-support/html5.js"></script>
+    <script src="~/tema/js/ie-support/respond.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body id="body">
+
+    <div id="site-content">
+
+        <header class="site-header">
+            <div class="container">
+                <a id="branding" href="/">
+                    <img src="~/tema/images/logom2.png" style="width:50px;height:50px" alt="Company name" class="logo">
+                    <div class="logo-copy">
+                        <h1 class="site-title">@Model.General.Name</h1>
+                        <small class="site-description">@Model.General.Slogan</small>
+                    </div>
+                </a> <!-- #branding -->
+                <!-- Default snippet for navigation -->
+                <div class="main-navigation">
+                    <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                    <ul class="menu">
+                        <li class="menu-item" id="home"><a href="/">Ana Sayfa</a></li>
+                        <li class="menu-item" id="service"><a href="/home/service">Hizmetlerimiz</a></li>
+                        <li class="menu-item" id="gallery"><a href="/home/gallery">Galeri</a></li>
+                        <li class="menu-item" id="contact"><a href="/home/contact">Bize Ulaşın</a></li>
+                    </ul> <!-- .menu -->
+                </div> <!-- .main-navigation -->
+
+                <div class="mobile-navigation"></div>
+            </div>
+        </header>
+        @RenderBody()
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row" id="footer_contact">
+                    <div class="col-md-3">
+                        <div class="widget contact-widget">
+                            <h3 class="widget-title">İletişim Bilgileri</h3>
+                            <div class="contact-info">
+                                <address>
+                                    <img src="~/tema/images/icon-map-small.png" class="icon">
+                                    <p><strong>@Model.General.Name</strong> @Model.General.Adress</p>
+                                </address>
+                                <a href="mailto:@Model.General.Mail" class="mail"><img src="~/tema/images/icon-envelope-small.png" class="icon">@Model.General.Mail</a>
+                                <a href="tel:@Model.General.Phone" class="phone"><img src="~/tema/images/icon-phone-small.png" class="icon">@Model.General.Phone</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="widget">
+                            <h3 class="widget-title">Bizi Takip Edin</h3>
+                            <p>Sosyal medya hesaplarımızı takipte kalın. </p>
+                            <div class="social-links">
+                                <a href="@Model.General.Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="@Model.General.Youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                                <a href="mailto:@Model.General.Mail" target="_blank"><i class="fab fa-google"></i></a>
+                                <a href="https://api.whatsapp.com/send?phone=@Model.General.Whatsapp&text=Merhaba%20hizmetleriniz%20hakkında%20bilgi%20almak%20istiyorum." target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="map">
+                            <iframe src="@Model.General.Map" style="border:0;width:100%;height:20rem;" allowfullscreen="" loading="lazy"></iframe>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="colophon">
+                    <p>Copyright 2021 . Created by <a href="https://mehmetztrk.tk/" target="_blank">Mehmet ÖZTÜRK</a>. All rights reserved.</p>
+                </div>
+            </div>
+            <small style="float:right"><a href="/admin" target="_blank" style="padding-right:5px;color:darkolivegreen">Yönetici Girişi</a></small>
+        </footer>
+    </div>
+
+
+
+
+
+
+    <script src="~/tema/js/jquery-1.11.1.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+    <script src="~/tema/js/plugins.js"></script>
+    <script src="~/tema/js/app.js"></script>
+
+    <script>
+        if (document.getElementById("slider") != null) {
+            console.log("x");
+            document.getElementById("body").className = "homepage header-collapse";
+        }
+        else {
+            document.getElementById("body").className = "";
+
+        }
+        if (document.getElementById("contact_control") != null) {
+            document.getElementById("footer_contact").style.display = "none";
+        }
+        else {
+            document.getElementById("footer_contact").style.display = "block";
+        }
+    </script>
+    <script>
+        setInterval(function () {
+            if (document.getElementsByClassName("alert").length > 0)
+                document.getElementById("message").remove();
+        }, 2000)
+    </script>
+
+</body>
+
+</html>

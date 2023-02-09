@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Service";
+    Layout = "~/Views/Shared/HomeLayout.cshtml";
+}
+
+<main class="main-content">
+    <div class="page">
+        <div class="container">
+            <p>@Model.General.ServiceParagraf</p>
+
+            <div class="row">
+                @foreach (var item in Model.Servisler)
+                {
+                    <div class="col-md-3">
+                        <div class="feature">
+                            <img src="~/tema/images/@item.Icon" class="feature-image">
+                            <h3 class="feature-title">@item.Title</h3>
+                            <p>@item.Description</p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+            <div class="row">
+                <h2 class="section-title" style="text-align:center;">Fiyat Listesi</h2>
+
+
+                <div class="price-list">
+                    <ul class="prices">
+                        @foreach (var item in Model.Fiyatlar)
+                        {
+                            <div class="col-md-6">
+                            <li>@item.Name<span class="price">@item.Price ₺</span></li>
+                    </div>
+                }
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </main>
+        <script>
+            window.onload = function () {
+                document.getElementById("service").className = "menu-item current-menu-item";
+            }
+        </script>

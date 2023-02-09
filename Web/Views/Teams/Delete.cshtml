@@ -1,0 +1,55 @@
+﻿@model Entity.Team
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Emin misiniz?</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="~/tema/images/@Model.image" alt="" style="width:25%;">
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.instagram)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.instagram)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.mail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Şimdi Sil" class="btn btn-danger" /> |
+        <a asp-action="Index">Geri Dön</a>
+    </form>
+</div>
